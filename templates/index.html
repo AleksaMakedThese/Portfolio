@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleksandra Chernenko | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+   <header class="hero">
+    <nav class="navbar">
+        <a href="#about">Über mich</a>
+        <a href="#projects">Projekte</a>
+        <a href="/cv">CV</a>
+        <a href="#contact">Kontaktformular</a>
+    </nav>
+
+    <section class="hero-content">
+        <div class="hero-text">
+            <h1>
+                <span>Oleksandra</span>
+                <span class="surname">Chernenko</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Umschulung zur Fachinformatikerin (FIAE)
+            </p>
+
+            <p class="hero-description">
+                Ich suche ein Pflichtpraktikum im Zeitraum vom
+                25.02.2027 bis 27.07.2027 und interessiere mich
+                besonders für Webentwicklung, Softwarelösungen
+                und praxisnahe IT-Projekte.
+            </p>
+
+            <a class="hero-button" href="#contact">Kontakt aufnehmen</a>
+        </div>
+
+        <div class="hero-image-area">
+
+            <img
+                class="profile-image"
+                src="{{ url_for('static', filename='images/profile.jpg') }}"
+                alt="Porträt von Oleksandra Chernenko"
+            >
+        </div>
+    </section>
+</header>
+
+    <main>
+        <section id="about" class="section">
+            <p class="section-label">Über mich</p>
+            <h2>Motivation</h2>
+
+            <p>
+                Mich begeistert, dass man durch Software komplexe Probleme strukturiert lösen
+                und gleichzeitig etwas entwickeln kann, das dauerhaft genutzt wird.
+                Diese Kombination aus analytischem Denken, Kreativität und kontinuierlichem Lernen
+                hat mich dazu bewegt, den beruflichen Weg in die Anwendungsentwicklung einzuschlagen.
+            </p>
+        </section>
+
+
+        <section id="skills" class="section">
+            <p class="section-label">Kompetenzen</p>
+            <h2>Skills</h2>
+
+            <div class="grid">
+                <article class="skill-card">
+                    <h3>Web</h3>
+                    <p>HTML, CSS, erste Grundlagen in JavaScript</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Python</h3>
+                    <p>Grundlagen, Flask, einfache Webanwendungen</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Tools</h3>
+                    <p>VS Code, Git, MS 365, virtuelle Maschinen</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Sprachen</h3>
+                    <p>Deutsch, Englisch, Russisch, Ukrainisch</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <p class="section-label">Projekte</p>
+            <h2>Eigene Projekte</h2>
+
+            <div class="project-card">
+                <h3>Neue Projekte folgen in Kürze!</h3>
+
+                <p>
+                    Im Rahmen meiner Umschulung arbeite ich kontinuierlich an neuen Projekten. Dieses Portfolio wird regelmäßig erweitert und dient gleichzeitig als praktische Lernplattform.
+                </p>
+
+                <p class="project-tech">HTML · CSS · Python · Flask</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <p class="section-label">Kontakt</p>
+            <h2>Kontakt aufnehmen</h2>
+             {% if success %}
+                 <p class="success-message">Vielen Dank! Ihre Nachricht wurde gespeichert.</p>
+             {% endif %}
+
+            <form class="contact-form" method="POST" action="/">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Ihr Name">
+
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" name="email" placeholder="Ihre E-Mail-Adresse">
+
+                <label for="company">Firma</label>
+                <input id="company" type="text" name="company" placeholder="Firma / Organisation">
+
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" placeholder="Ihre Nachricht"></textarea>
+
+                <button type="submit">Nachricht senden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 Oleksandra Chernenko · och.nrw@gmail.com · Dieses Portfolio befindet sich in aktiver Entwicklung</p>
+    </footer>
+</body>
+</html>
