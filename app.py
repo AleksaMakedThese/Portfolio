@@ -1,18 +1,12 @@
 from flask import Flask, render_template, request
-from flask_mail import Mail, Message
+import resend
 import json
 from datetime import datetime
 import os
 
 app = Flask(__name__)
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
-app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
-
-mail = Mail(app)
+resend.api_key = os.environ.get("RESEND_API_KEY")
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -28,14 +22,12 @@ def index():
             "date": datetime.now().strftime("%d.%m.%Y %H:%M"),
         }
 
-        msg = Message(
-            subject="Neue Nachricht von Portfolio",
-            sender=app.config["MAIL_USERNAME"],
-            recipients=[app.config["MAIL_USERNAME"]],
-            reply_to=message_data["email"],
-        )
-
-        msg.body = f"""
+        resend.Emails.send({
+            "from": "Portfolio <onboarding@resend.dev>",
+            "to": ["och.nrw.portfolio.project@gmail.com"],
+            "subject": "Neue Nachricht von Portfolio",
+            "reply_to": message_data["email"],
+            "text": f"""
 Name: {message_data["name"]}
 
 E-Mail: {message_data["email"]}
@@ -49,8 +41,7 @@ Nachricht:
 Gesendet am:
 {message_data["date"]}
 """
-
-        mail.send(msg)
+        })
 
         try:
             with open("messages.json", "r", encoding="utf-8") as file:
