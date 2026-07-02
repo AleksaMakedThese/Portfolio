@@ -24,7 +24,7 @@ def index():
 
         resend.Emails.send({
             "from": "Portfolio <onboarding@resend.dev>",
-            "to": ["och.nrw.portfolio.project@gmail.com"],
+            "to": ["och.nrw@gmail.com"],
             "subject": "Neue Nachricht von Portfolio",
             "reply_to": message_data["email"],
             "text": f"""
