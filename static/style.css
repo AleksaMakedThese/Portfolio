@@ -546,45 +546,6 @@ footer {
     color: #86726a;
 }
 
-@media (max-width: 850px) {
-    .cv-navbar {
-        width: 100%;
-        margin-left: 0;
-        padding: 18px 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cv-page {
-        padding: 40px 22px 180px;
-    }
-
-    .cv-header h1 {
-        font-size: 2.6rem;
-        letter-spacing: 0.08em;
-    }
-
-    .cv-header p {
-        font-size: 0.9rem;
-        letter-spacing: 0.16em;
-    }
-
-    .cv-header::after {
-        width: 100%;
-    }
-
-    .cv-columns {
-        grid-template-columns: 1fr;
-    }
-
-    .floating-cta {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-        width: auto;
-        padding: 18px;
-    }
-}
 
 .cv-contact-cards {
     display: flex;
@@ -650,15 +611,100 @@ footer {
     max-width: 1300px;
     }
 
+@media (max-width: 850px) {
+    .cv-navbar {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cv-page {
+        padding: 40px 22px 180px;
+    }
+
+    .cv-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 0.08em;
+    }
+
+    .cv-header p {
+        font-size: 0.9rem;
+        letter-spacing: 0.16em;
+    }
+
+    .cv-header::after {
+        width: 100%;
+    }
+
+    .cv-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-cta {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        width: auto;
+        padding: 18px;
+    }
+}
+
 @media (max-width: 700px) {
 
-    /* 1. Hero: дать фото и тексту нормальное расстояние */
+    .hero {
+        min-height: auto;
+        overflow: hidden;
+    }
+
+    .navbar {
+        width: 100%;
+        margin-left: 0;
+        padding: 16px;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
     .hero-content {
         display: flex;
         flex-direction: column;
-        gap: 36px;
         padding: 0 24px;
-        margin-top: 60px;
+        margin-top: 55px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.6rem;
+        letter-spacing: 0.12em;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        margin: 32px 0 48px;
+        font-size: 0.85rem;
+        letter-spacing: 0.22em;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin: 0 auto 48px;
+        font-size: 1rem;
+        line-height: 1.55;
+        color: #8f6c5d;
+    }
+
+    .hero-button {
+        min-width: 0;
+        width: 100%;
+        padding: 22px 28px;
+        font-size: 1.4rem;
     }
 
     .hero-image-area {
@@ -673,34 +719,88 @@ footer {
 
     .hero-image-area::before {
         width: 340px;
-        height: 160px;
+        height: 150px;
+        left: 50%;
+        top: 50%;
         transform: translate(-50%, -45%);
     }
+}
 
+@media (max-width: 700px) {
 
-    /* 2. Skills: все круги в один горизонтальный ряд */
-    .grid {
+    .cv-page {
+        max-width: 100%;
+        padding: 0 22px 40px;
+        overflow: hidden;
+    }
+
+    .cv-navbar {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 28px;
+    }
+
+    .cv-navbar a {
+        font-size: 1rem;
+    }
+
+    .cv-header h1 {
+        font-size: 2.3rem;
+        letter-spacing: 0.08em;
+        line-height: 1.25;
+        word-break: normal;
+    }
+
+    .cv-header p {
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        line-height: 1.6;
+    }
+
+    .cv-header::after {
+        width: 100%;
+    }
+
+    .cv-main-layout {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 18px;
-        padding-bottom: 16px;
-        justify-content: flex-start;
+        flex-direction: column;
+        gap: 28px;
+        margin-top: 36px;
     }
 
-    .skill-card {
-        flex: 0 0 170px;
-        width: 170px;
-        height: 170px;
+    .cv-accordion {
+        width: 100%;
+        max-width: 100%;
     }
 
+    .cv-accordion summary {
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        padding: 22px 18px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
 
-    /* 3. CV: поднять floating box выше */
+    .cv-contact-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .cv-contact-card {
+        width: 100%;
+        min-height: 82px;
+        padding: 18px;
+    }
+
     .floating-cta {
-        position: fixed;
-        left: auto;
-        right: 24px;
-        bottom: 90px;
-        width: 210px;
+        position: static;
+        width: 100%;
+        margin-top: 30px;
+        padding: 22px;
     }
 }
