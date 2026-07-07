@@ -139,39 +139,64 @@
             </details>
         </section>
     
-     <section class="cv-contact-cards">
-    <a class="cv-contact-card" href="https://www.google.com/maps/place/Hagen+Hbf/@51.3633236,7.4634166,17.5z/data=!3m1!5s0x47b9ec4367ecc199:0x364baddf3accf507!4m6!3m5!1s0x47b93c9d846f3695:0xefd9d04fcb70ea1a!8m2!3d51.3628576!4d7.4604154!16s%2Fm%2F0261vys?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <span class="contact-icon">⌖</span>
+    <section class="cv-contact-cards">
+
+    <a class="cv-contact-card"
+       href="https://www.google.com/maps/place/Hagen+Hbf/@51.3633236,7.4634166,17.5z/data=!3m1!5s0x47b9ec4367ecc199:0x364baddf3accf507!4m6!3m5!1s0x47b93c9d846f3695:0xefd9d04fcb70ea1a!8m2!3d51.3628576!4d7.4604154!16s%2Fm%2F0261vys?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D"
+       target="_blank">
+
+        <span class="contact-icon">
+            <img src="{{ url_for('static', filename='images/locationpin.svg') }}" alt="Standort">
+        </span>
+
         <span>
             <strong>Standort</strong>
             <small>Hagen</small>
         </span>
     </a>
 
+
     <a class="cv-contact-card" href="mailto:och.nrw@gmail.com">
-        <span class="contact-icon">✉</span>
+
+        <span class="contact-icon">
+            <img src="{{ url_for('static', filename='images/mailpin.svg') }}" alt="E-Mail">
+        </span>
+
         <span>
             <strong>E-Mail</strong>
             <small>och.nrw@gmail.com</small>
         </span>
     </a>
 
+
     <a class="cv-contact-card" href="https://github.com/AleksaMakedThese" target="_blank">
-        <span class="contact-icon">Git</span>
+
+        <span class="contact-icon">
+            <img src="{{ url_for('static', filename='images/githubpin.svg') }}" alt="GitHub">
+        </span>
+
         <span>
             <strong>GitHub</strong>
             <small>@AleksaMakedThese</small>
         </span>
     </a>
 
-    <a class="cv-contact-card" href="https://www.linkedin.com/in/oleksandra-chernenko-76028741b/" target="_blank">
-        <span class="contact-icon">in</span>
+
+    <a class="cv-contact-card"
+       href="https://www.linkedin.com/in/oleksandra-chernenko-76028741b/"
+       target="_blank">
+
+        <span class="contact-icon">
+            <img src="{{ url_for('static', filename='images/linkedinpin.svg') }}" alt="LinkedIn">
+        </span>
+
         <span>
             <strong>LinkedIn</strong>
             <small>Oleksandra Chernenko</small>
         </span>
     </a>
-</section>    
+
+</section>
 </div>
 </main>
     <aside class="floating-cta">

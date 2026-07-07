@@ -623,6 +623,12 @@ footer {
     font-size: 1.05rem;
 }
 
+.contact-icon img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
 .cv-contact-card strong {
     display: block;
     font-size: 1.05rem;
