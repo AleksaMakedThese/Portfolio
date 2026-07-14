@@ -63,6 +63,10 @@ Gesendet am:
 def cv():
     return render_template("cv.html")
 
+@app.route("/impressum")
+def impressum():
+    return render_template("impressum.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
